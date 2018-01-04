@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN http://www.w3.org/TR/html4/loose.dtd">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#button").click(function() {
+				if($(this).html() == "-"){
+					$(this).html("+");
+				} else {
+					$(this).html("-");
+				}
+				$("#box").slideToggle();
+			});
+		});
+	</script>
+	<style type="text/css">
+		#widnow { width:400px; border:solid 1px;}
+		#title_bar { background: #FEFEFE; height: 25px; width: 100%; }
+		#button { border:solid 1px; width: 25px; height: 23px; float:right; cursor:pointer; }
+		#box { height: 250px; background: #DFDFDF; }
+	</style>
+</head>
+<body>
+	<div id="widnow">
+		<div id="title_bar">
+			<div id="button">+</div>
+		</div>
+		<div id="box"></div>
+	</div>
+</body>
+</html>
