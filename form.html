@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>Form example</title>
+
+		<style type="text/css">
+			p {margin:0 0 0.5em 0;}
+			label {float:left; clear:left; width:7em;}
+			input {float:left; clear:right;}
+			div#przedmioty,div#jezyki {float:left; width:12em; margin-bottom:1.5em;}
+			div#jezyki label {width:10em;}
+		</style>
+
+	</head>
+	<body>
+		<form action="#" method="get">
+			<fieldset id="daneid">
+				<legend>Dane identyfikacyjne</legend>
+				<label for="imie">Imię</label>
+				<input type="text" name="imie" id="imie" size="20" maxlength="30" />
+				<label for="nazwisko">Nazwisko</label>
+				<input type="text" name="nazwisko" id="nazwisko" size="20" maxlength="30" />
+				<label for="numer">Numer</label>
+				<input type="text" name="numer" id="numer" size="8" maxlength="8" />
+			</fieldset>
+			<fieldset>
+				<legend>Zgłoszenia na egzaminy</legend>
+				<div id="przedmioty">
+					<label for="matematyka">Matematyka</label>
+					<input type="checkbox" name="matematyka" value="mat" id="matematyka" />
+					<label for="fizyka">Fizyka</label>
+					<input type="checkbox" name="fizyka" value="fiz" id="fizyka" />
+					<label for="chemia">Chemia</label>
+					<input type="checkbox" name="chemia" value="che" id="chemia" />
+					<label for="biologia">Biologia</label>
+					<input type="checkbox" name="biologia" value="bio" id="biologia" />
+					<label for="geografia">Geografia</label>
+					<input type="checkbox" name="geografia" value="geo" id="geografia" />
+					<label for="informatyka">Informatyka</label>
+					<input type="checkbox" name="informatyka" value="inf" id="informatyka" />
+				</div>
+				<div id="jezyki">
+					<p>Język obcy</p>
+					<label><input type="radio" name="jobcy" value="0"/>brak zgłoszenia</label>
+					<label><input type="radio" name="jobcy" value="a"/>angielski</label>
+					<label><input type="radio" name="jobcy" value="n"/>niemiecki</label>
+					<label><input type="radio" name="jobcy" value="r"/>rosyjski</label>
+					<label><input type="radio" name="jobcy" value="f"/>francuski</label>
+				</div>
+			</fieldset>
+			<input type="submit" name="wyslij" value="Wyślij" />
+		</form>
+	</body>
+</html>
