@@ -5,6 +5,15 @@
     -> ;
 -->
 <html>
+<head>
+	<style type="text/css">
+		p {margin:0 0 0.5em 0;}
+		label {float:left; clear:left; width:10em;}
+		input {float:left; clear:right;}
+		div.field { font-family: Arial, Helvetica, Sans; font-size: 16pt; }
+		.name {font-weight: bold; color:blue;}
+		</style>
+</head>
 <body>
 
 	<?PHP
@@ -33,7 +42,7 @@
 
 		$address = $address1 ." ". $address2 ." ". $address3 ." ". $address4;
 
-		$link = new mysqli("52.25.60.234","user","password", "form1");
+		$link = new mysqli("localhost","root","password", "form1");
 		$sql = "INSERT INTO regs (firstname, lastname, login, password, address, education, interest1, interest2, interest3, interest4, interest5) VALUES ('$firstname', '$lastname', '$login', '$password', '$address', '$education', '$interest1', '$interest2', '$interest3', '$interest4', '$interest5')";
 		$result = mysqli_query($link, "select host,user from user");
 		if (mysqli_query($link, $sql)) {
@@ -43,12 +52,27 @@
 		}
 		echo "<br><br>";
 	}
+
+	function display_all()
+	{
+		echo "<div class=\"field\">Values submitted</div></br>";
+		while ($it = each($_GET)) {
+			echo "<div class=\"field\">";
+			echo "<span class=\"name\">" . $it['key'] . "</span></br>";
+			echo "<span class=\"value\">" . $it['value'] . "</span></br>";
+			echo "</div>";
+		}
+	}
 	?>
-		<?PHP sql_execute_query(); ?>
-Thank you <?php echo $_GET["name"]; ?><br>
-You are registered.
-</br>
-<a href="form1.php">Back</a>
+
+	<?PHP sql_execute_query(); ?>
+
+	Thank you <?php echo $_GET["name"]; ?><br>
+	You are registered.</br>
+
+	<a href="form1.php">Back</a>
+	</br></br></br>
+	<?php display_all(); ?>
 
 </body>
 </html>
